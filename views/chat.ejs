@@ -1,0 +1,12 @@
+<div class="container alert alert-info mt-3">
+    <h3 class="text-success" style="text-align: center;">Mensagens</h3>
+<% mensagem.forEach(mensagem =>{ %>
+    <h3 class="p-3 mb-2 bg-dark text-white">Nome: <%= mensagem.name %></h3>
+    <h4 class="p-3 mb-2 bg-warning text-dark">Titulo: <%= mensagem.titulo %></h4>
+    <p class="p-3 mb-2 bg-success text-white"><%= mensagem.message %></p>
+    <form action="/remove/" method="post">
+    <input type="hidden" name="id" value="<%= mensagem.id %>">
+    <button type="submit" class="btn btn-danger col-2 mt-3 mb-3">Remover Mensagem</button>
+    </form>      
+<% }) %>
+</div>
